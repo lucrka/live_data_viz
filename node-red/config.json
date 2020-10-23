@@ -1,0 +1,175 @@
+[
+    {
+        "id": "a93dfcf6.55193",
+        "type": "tab",
+        "label": "Web Socket Server",
+        "disabled": false,
+        "info": ""
+    },
+    {
+        "id": "5c10010b.5d771",
+        "type": "websocket in",
+        "z": "a93dfcf6.55193",
+        "d": true,
+        "name": "",
+        "server": "49fbabaf.e814d4",
+        "client": "",
+        "x": 320,
+        "y": 180,
+        "wires": [
+            [
+                "c9aaccc4.ca646",
+                "fb1ad956.4edc38"
+            ]
+        ]
+    },
+    {
+        "id": "da345daf.8e496",
+        "type": "websocket out",
+        "z": "a93dfcf6.55193",
+        "name": "",
+        "server": "49fbabaf.e814d4",
+        "client": "",
+        "x": 920,
+        "y": 180,
+        "wires": []
+    },
+    {
+        "id": "af55fca3.43a39",
+        "type": "websocket in",
+        "z": "a93dfcf6.55193",
+        "d": true,
+        "name": "",
+        "server": "",
+        "client": "9352ccf6.ab633",
+        "x": 260,
+        "y": 440,
+        "wires": [
+            [
+                "2a77e8fd.475638"
+            ]
+        ]
+    },
+    {
+        "id": "fb1ad956.4edc38",
+        "type": "debug",
+        "z": "a93dfcf6.55193",
+        "name": "",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "true",
+        "targetType": "full",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 670,
+        "y": 280,
+        "wires": []
+    },
+    {
+        "id": "2a77e8fd.475638",
+        "type": "json",
+        "z": "a93dfcf6.55193",
+        "name": "",
+        "property": "payload",
+        "action": "",
+        "pretty": false,
+        "x": 530,
+        "y": 440,
+        "wires": [
+            [
+                "fb1ad956.4edc38"
+            ]
+        ]
+    },
+    {
+        "id": "c9aaccc4.ca646",
+        "type": "function",
+        "z": "a93dfcf6.55193",
+        "name": "",
+        "func": "\nreturn {payload: msg.payload};",
+        "outputs": 1,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "x": 600,
+        "y": 180,
+        "wires": [
+            [
+                "da345daf.8e496"
+            ]
+        ]
+    },
+    {
+        "id": "38cc518.f6539ae",
+        "type": "function",
+        "z": "a93dfcf6.55193",
+        "name": "",
+        "func": "\nreturn msg;",
+        "outputs": 1,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "x": 880,
+        "y": 480,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "c1280888.5c6058",
+        "type": "mqtt in",
+        "z": "a93dfcf6.55193",
+        "name": "visualization",
+        "topic": "/laborwoche/sensors",
+        "qos": "2",
+        "datatype": "auto",
+        "broker": "91a24c09.2fc43",
+        "x": 310,
+        "y": 280,
+        "wires": [
+            [
+                "c9aaccc4.ca646",
+                "fb1ad956.4edc38"
+            ]
+        ]
+    },
+    {
+        "id": "49fbabaf.e814d4",
+        "type": "websocket-listener",
+        "z": "",
+        "path": "/ws/receive",
+        "wholemsg": "false"
+    },
+    {
+        "id": "9352ccf6.ab633",
+        "type": "websocket-client",
+        "z": "",
+        "path": "ws://localhost:1880/ws/receive",
+        "tls": "",
+        "wholemsg": "false"
+    },
+    {
+        "id": "91a24c09.2fc43",
+        "type": "mqtt-broker",
+        "z": "",
+        "name": "",
+        "broker": "broker.hivemq.com",
+        "port": "1883",
+        "clientid": "",
+        "usetls": false,
+        "compatmode": false,
+        "keepalive": "60",
+        "cleansession": true,
+        "birthTopic": "",
+        "birthQos": "0",
+        "birthPayload": "",
+        "closeTopic": "",
+        "closeQos": "0",
+        "closePayload": "",
+        "willTopic": "",
+        "willQos": "0",
+        "willPayload": ""
+    }
+]
