@@ -32,6 +32,7 @@ let ws = new WebSocket("ws://localhost:1880/ws/receive")
 function setup(){
     createCanvas(1200, 900);
     background(0);
+    dataArray = [];
 }
 
 function draw(){
