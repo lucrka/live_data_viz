@@ -6,11 +6,11 @@ Laborwoche WS20/21
 Luca Stetter
 Prof. Hartmut Bohnacker
 
-### SetUp
+## SetUp
 
-#### Node SetUp
+### Node SetUp
 
-##### 1. install NodeJS
+#### 1. install NodeJS
 
 1. go to the [NodeJS Website](https://nodejs.org/en/)
 2. download LTS version
@@ -18,7 +18,7 @@ Prof. Hartmut Bohnacker
 4. check with: ```node -v```
 
 
-##### 2. install Node-Red
+#### 2. install Node-Red
 
 1. stay in Terminal
 2. terminal: ```sudo npm install -g --unsafe-perm node-red```
@@ -26,20 +26,21 @@ Prof. Hartmut Bohnacker
 4. Serveradresse in Browser öffnen:
     ```[info] Server wird jetzt auf http://127.0.0.1:1880/ ausgeführt.```
 
-##### 3. add Node-Red Modules
+#### 3. add Node-Red Modules
 
 1. Menü > Palette verwalten
 2. *node-red-node-serialport* installieren
 ![palette manager](images/palette.png)
 
-#### IDE SetUp
+### IDE SetUp
 
-##### 1. Install Visual Studio Code
+#### 1. Install Visual Studio Code
 
 1. go to [VS Code Website](https://code.visualstudio.com/)
 2. download
 
-##### 2. SetUp VS Code
+#### 2. SetUp VS Code
+
 1. open VS Code
 2. go to the Extensions Tab <img src="images/extensionTab.png" width="25"> on the left
 3. install *Live Server*
